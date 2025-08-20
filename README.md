@@ -13,8 +13,7 @@ This code reproduces all analyses and figures reported in the manuscript. The pi
 - Training and validations ROI classifiers
 - Generating figures and tables for both main text and supplementary material
 
-🧠
-💡**Note:**
+🧠**Note:**
 Mentalizing Signatures are shared in /weight_maps as images  to be used and tested in future studies: i) Self-RS to predict self-related mentalizing, ii) Other-RS to predict other-related mentalizing, iii) Mentalizing Signature (MS) to predict both, and iv) Self-vs-Other (Self-RS) Signature to predict self- vs. other-condition.
  
 
