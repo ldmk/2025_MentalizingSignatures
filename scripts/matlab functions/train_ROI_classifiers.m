@@ -42,7 +42,7 @@ for m = 1:numel(masks)
     self_oth_roi = apply_mask(train_set_SvO, masks{m});
     
     %% Multiclass SVM that train Self, Other, and Mentalizing Classifiers in one-go
-    [cverr_ROI_mc.(names{m}), stats_ROI_mc.(names{m}), regOutput_ROI_mc.(names{m})] = predict(all_conds_roi, 'algorithm_name', 'cv_svm', 'nfolds', repmat([1:10, 1:10, 1]', 3, 1),'error_type', 'mcr', 'MultiClass', 'Balanced', 0.5, 'verbose', 0);
+    [cverr_ROI_mc.(names{m}), stats_ROI_mc.(names{m}), regOutput_ROI_mc.(names{m})] = predict(all_conds_roi, 'algorithm_name', 'cv_svm', 'nfolds', repmat([1:10, 1:10, 1]', 3, 1),'error_type', 'mcr', 'MultiClass', 'verbose', 0);
     
     % ROC plots for Training
     ROC.Self.vsOther.(names{m}) = roc_plot(stats_ROI_mc.(names{m}).dist_from_hyperplane_xval(1:42, 1), training_set.Y(1:42,1)==1, 'twochoice', 'nooutput', 'noplot');
